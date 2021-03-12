@@ -1,0 +1,119 @@
+/* General setup */
+html {
+  box-sizing: border-box;
+}
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0 auto;
+  min-width: 1000px;
+  max-width: 1400px;
+}
+h1, #footerpara {
+  margin: 0 auto;
+  background-color: greenyellow;
+  font-size: 55px;
+  width: 50%;
+  text-align: center;
+  border-radius: 10% 5%;
+}
+
+p {
+  font-size: 20px;
+  text-align: left;
+  margin-left: 0.01px;
+  padding-left: 15px;
+}
+
+
+/* Navigation part */
+.nav-li li {
+  list-style-type: none;
+  display: inline;
+  margin: 2.7em;
+  text-decoration-line: none;
+}
+/* Layout */
+ 
+#rightsection {
+  width: 42%;
+  margin-left: 8%;
+}
+#leftsection {
+  float: right;
+  width: 42%;
+  margin-right: 8%;
+  /*margin-left: 42%;*/
+}
+/*table {
+  width: 40%;
+}*/
+table input {
+  width: 60%;
+  margin: 3% 3% 3% 3%;
+}
+#scoretable {
+  width: 80%;
+}
+#scoretable input {
+  width: 40px;
+}
+aside {
+  float: left;
+  width: 30%;
+}
+
+/*nav {
+  float: left;
+  width: 20%;
+}
+#psychtable {
+  margin-top: 80px;
+}
+
+#affecttable {
+  border: 40px solid greenyellow
+}*/
+
+#ul-round {
+  width: 11.25em;
+  padding: 2em;
+  text-align: left;
+  margin: 2% 5% 2% 5%;
+  border-radius: 4em;
+}
+
+ul a, ul {
+  text-decoration: none;
+  background-color: greenyellow;
+  font-size: larger;
+  text-align: center;
+  width: 90%;
+  margin: 0 auto;
+  padding: 0 0 0 0.09em; 
+}
+
+#paras {
+  border-bottom: seagreen;
+
+}
+
+footer {
+  clear: both;
+}
+
+header, section, aside, nav, footer {
+  padding: 0.05em;
+}
+
+/* header and footer */
+
+header, footer {
+  border-top: 5px solid green;
+  border-bottom: 5px solid green;
+
+}
+
+/* WRITE YOUR CODE BELOW HERE */

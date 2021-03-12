@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+		<meta charset="utf-8" />
+		<title>Harbottle School</title>
+		<meta name="generator" content="Bootply" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+        <link href="styles/style.css" rel="stylesheet" type="text/css" />
+        <!--
+		<link href="/css/bootstrap.min.css" rel="stylesheet" />
+		<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet" />
+        -->
+        <!--[if lt IE 9]>
+			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+	</head>
+    
+  <body>
+
+  <header>
+
+      <h1>For Schools</h1>
+      
+      <nav>
+        <ul class="nav-li">
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="./staff.html">Staff</a></li>
+          <li><a href="./studentdata.html">Student</a></li>
+          <li><a href="./signupsch.html">Register</a></li>
+          <li><a href="./schaddress">Contact us</a></li>
+          <!-- <li><a href="./schpix">Gallery</a></li> -->
+          <li><a href="./studentresult.html">Student Results</a></li>
+         <!--  <li><a href="./schbook">Prospectus</a></li> -->
+          
+        </ul>
+  
+      </nav>
+
+  </header>
+  <div class="container">
+      <div class="row">
+        
+        <div class="col-md-12"> 
+          
+          <div class="panel">
+            <div class="panel-body">
+              
+              
+              
+              <!--/stories-->
+              <div class="row">    
+                <div class="col-md-2 col-sm-3 text-center">
+                    
+                  <h1> <i id="clasNo"></i> Class Report Sheet </h1>
+                <fieldset style="box-shadow: 2px 3px 8px 5px greenyellow; margin: 0 auto; width: 95%;">
+                    <legend>Student Data</legend>
+                  <h3 style="margin-left: 30%;">Name: . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</h3> <span id="paras" class="name"></span>
+                  <section id="leftsection">
+                    <fieldset style="box-shadow: 2px 3px 8px 5px greenyellow">
+                    <p>Class:</p> <span id="paras" class="class"></span>
+                    <p>Time Present:</p> <span id="paras" class="attendance"></span>
+                    <p>No. In Class</p> <span id="paras" class="classize"></span>
+                </fieldset>
+                </section>
+                  <section id="rightsection">
+                      <fieldset style="box-shadow: 2px 3px 8px 5px greenyellow">
+                    <p>Term Ending:</p> <span id="paras" class="termends"></span>
+                    <p>Student's Age:</p> <span id="paras" class="age"></span>
+                    <p>Times School Opened:</p> <span id="paras" class="openschdays"></span>
+                </fieldset>  
+                </section>
+                  
+                  <form method="POST" action="http://127.0.0.1:5500/api/post">
+                    <!--<span id="ca">CA(40marks)</span> <span id="exam">EXAM(60marks)</span> <span id="subjecttot">TOTAL(100marks)</span>-->
+                    <section style="margin: 2% 0 0 20%;">
+                    <table id="scoretable">
+                    <tr>
+                      
+                      <td>SUBJECTS</td>
+                        <td>
+                            CA(40marks)
+                        </td>
+                        
+                        <td>
+                            EXAM(60marks)
+                        </td>
+                  
+                        <td>
+                            TOTAL(100marks)
+                       </td>
+
+                       <td>
+                           REMARKS
+                       </td>
+                  </tr>
+
+
+                    <tr>
+                      
+                        <td id="subjectTD"><label for="math">Mathematics:</label></td>
+                          <td>
+                              <input type="number" id="math" name="mthca" class="mthca" oninput="mcalc()" >
+                          </td>
+                          
+                          <td>
+                              <input type="number" id="math" name="mthexam" class="mthexam" oninput="mcalc()" >
+                          </td>
+                    
+                          <td>
+                              <input type="number" id="math" name="mthtot"  class="mthtot" >
+                        </td>
+
+                        <td>
+                            <i type="text" id="math" name="desc" id="m-rem" class="mrem"></i>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td id="subjectTD"><label for="eng">English:</label></td>
+                        <td>
+                          <input type="number" id="eng" name="engca" class="engca" oninput="ecalc()" >
+                      </td>
+                
+                      <td>
+                          <input type="number" id="eng" name="engexam" class="engexam" oninput="ecalc()" >
+                      </td>
+                
+                      <td>
+                          <input type="number" id="eng" name="engtot" class="engtot" >
+                      </td>
+
+                      <td>
+                          <i type="text" id="eng" name="desc" class="erem" ></i>
+                      </td>
+                    </tr>
+                    
+                    <tr>
+                        <td id="subjectTD"><label for="verbal">Verbal Reasoning:</label></td>
+                        <td>
+                            <input type="number" id="verbal" name="verbalca" class="verbalca" oninput="vcalc()" >
+                        </td>
+                  
+                        <td>
+                            <input type="number" id="verbal" name="verbalexam" class="verbalexam" oninput="vcalc()" >
+                        </td>
+                  
+                        <td>
+                            <input type="number" id="verbal" name="verbaltot" class="verbaltot" >
+                        </td>
+
+                        <td>
+                            <i type="text" id="verbal" name="desc" id="v-rem" class="vrem" ></i>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td id="subjectTD"><label for="btech"> Basic technology:</label></td>
+                        <td>
+                            <input type="number" id="btech" name="btca" class="btca" oninput="calc()" >
+                        </td>
+                  
+                        <td>
+                            <input type="number" id="btech" name="btexam" class="btexam" oninput="calc()" >
+                        </td>
+                  
+                        <td>
+                            <input type="number" id="btech" name="bttot" class="bttot" >
+                        </td>
+
+                        <td>
+                            <i type="text" id="btech" name="desc" id="bt-rem" class="btrem" ></i>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td id="subjectTD"><label for="bsci" >Basic science:</label></td></td>
+                        <td>
+                            <input type="number" id="bsci" name="bsca" class="bsca" oninput="bscalc()" >
+                        </td>
+                  
+                        <td>
+                            <input type="number" id="bsci" name="bsexam" class="bsexam" oninput="bscalc()" >
+                        </td>
+                  
+                        <td>
+                            <input type="number" id="bsci" name="bstot" class="bstot" >
+                        </td>
+
+                        <td>
+                            <i type="text" id="bsci" name="desc" class="bsremk" ></i>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td id="subjectTD"><label for="socs" >Social studies:</label></td>
+                        <td>
+                            <input type="number" id="socs" name="sosca" class="sosca" oninput="soscalc()" >
+                        </td>
+                  
+                        <td>
+                            <input type="number" id="socs" name="sosexam" class="sosexam" oninput="soscalc()" >
+                        </td>
+                  
+                        <td>
+                            <input type="number" id="socs" name="sostot" class="sostot" >
+                        </td>
+
+                        <td>
+                            <i type="text" name="desc" id="socs" class="sorem" ></i>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td id="subjectTD"><label for="phesubj">Physical & Health Education:</label></td>
+                        <td>
+                            <input type="number" id="phesubj" name="pheca" class="pheca" oninput="phecalc()" >
+                        </td>
+                  
+                        <td>
+                            <input type="number" id="phesubj" name="pheexam" class="pheexam" oninput="phecalc()" >
+                        </td>
+                  
+                        <td>
+                            <input type="number" id="phesubj" name="phetot" class="phetot" >
+                        </td>
+
+                        <td>
+                          <i type="text" name="desc" id="phesubj" class="prem"  ></i>
+                      </td>
+                    </tr>
+                    
+                    <tr>
+                        <td id="subjectTD"><label for="quantit">Quantitative:</label></td>
+                        <td>
+                            <input type="number" id="quantit" name="quantitativeca" class="quantitativeca" oninput="qcalc()" >
+                        </td>
+                  
+                        <td>
+                            <input type="number" id="quantit" name="quantitativeexam" class="quantitativeexam" oninput="qcalc()" >
+                        </td>
+                  
+                        <td>
+                            <input type="number" id="quantit" name="quantitativetot" class="quantitativetot" >
+                        </td>
+
+                        <td>
+                            <i type="text" name="desc" id="quantit" class="qrem" ></i>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td id="subjectTD"><label for="numeracy">Numeracy:</label></td>
+                        <td>
+                            <input type="number" id="numeracy" name="numeracyca" class="numeracyca" oninput="ncalc()" >
+                        </td>
+                  
+                        <td>
+                            <input type="number" id="numeracy" name="numeracyexam" class="numeracyexam" oninput="ncalc()" >
+                        </td>
+                  
+                        <td>
+                            <input type="number" id="numeracy" name="numeracytot" class="numeracytot" >
+                        </td>
+                        
+                        <td>
+                          <i type="text" name="desc" id="numeracy" class="nrem" ></i>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td id="subjectTD"><label for="health">Health habit:</label></td>
+                        <td>
+                            <input type="number" id="health" name="healthca" class="healthca" oninput="hcalc()" >
+                        </td>
+                  
+                        <td>
+                            <input type="number" id="health" name="healthexam" class="healthexam" oninput="hcalc()" >
+                        </td>
+                  
+                        <td>
+                            <input type="number" id="health" name="healthtot" class="healthtot" >
+                        </td>
+
+                        <td>
+                          <i type="text" name="desc" id="health" class="hrem" ></i>
+                      </td>
+                    </tr>
+
+                  </table>
+                </section>
+
+                <section id="psychsection" style="float: right; width: 40%;">
+                  <table id="psychtable" style="width: 60%;">
+                      <tr>
+                          <th><b>Psychomotor Skill</b></th>
+                      </tr>
+                      <tr>
+                          <td>
+                              <table style="width: 62%; margin: 0 auto;">
+                                    <tr>
+                                        <td><b></b></td>
+                                        <td>
+                                            5
+                                        </td>
+                                        
+                                        <td>
+                                            4
+                                        </td>
+                                    
+                                        <td>
+                                            3
+                                        </td>
+                
+                                        <td>
+                                            2
+                                        </td>
+                
+                                        <td>
+                                            1
+                                        </td>
+                                    </tr>
+                
+                
+                                    <tr>
+                                        
+                                        <td>Handwritting:</td>
+                                        <td>
+                                            <input type="checkbox" name="job_num" >
+                                        </td>
+                                
+                                        <td>
+                                            <input type="checkbox" name="desc" >
+                                        </td>
+                                
+                                        <td>
+                                            <input type="checkbox" name="desc" >
+                                        </td>
+                
+                                        <td>
+                                            <input type="checkbox" name="desc" >
+                                        </td>
+                
+                                        <td>
+                                            <input type="checkbox" name="desc" >
+                                        </td>
+                                    </tr>
+                
+                                    <tr>
+                                        <td>Verbal fluency:</td>
+                                        <td>
+                                            <input type="checkbox" name="job_num" >
+                                        </td>
+                                
+                                        <td>
+                                            <input type="checkbox" name="desc" >
+                                        </td>
+                                
+                                        <td>
+                                            <input type="checkbox" name="desc" >
+                                        </td>
+                
+                                        <td>
+                                            <input type="checkbox" name="desc" >
+                                        </td>
+                
+                                        <td>
+                                            <input type="checkbox" name="desc" >
+                                        </td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td>Games:</td>
+                                        <td>
+                                            <input type="checkbox" name="job_num" >
+                                        </td>
+                                
+                                        <td>
+                                            <input type="checkbox" name="desc" >
+                                        </td>
+                                
+                                        <td>
+                                            <input type="checkbox" name="desc" >
+                                        </td>
+                
+                                        <td>
+                                            <input type="checkbox" name="desc" >
+                                        </td>
+                
+                                        <td>
+                                            <input type="checkbox" name="desc" >
+                                        </td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td>Sports:</td>
+                                        <td>
+                                            <input type="checkbox" name="job_num" >
+                                        </td>
+                                
+                                        <td>
+                                            <input type="checkbox" name="desc" >
+                                        </td>
+                                
+                                        <td>
+                                            <input type="checkbox" name="desc" >
+                                        </td>
+                
+                                        <td>
+                                            <input type="checkbox" name="desc" >
+                                        </td>
+                
+                                        <td>
+                                            <input type="checkbox" name="desc" >
+                                        </td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td>Hand tools:</td>
+                                        <td>
+                                            <input type="checkbox" name="job_num" >
+                                        </td>
+                                
+                                        <td>
+                                            <input type="checkbox" name="desc" >
+                                        </td>
+                                
+                                        <td>
+                                            <input type="checkbox" name="desc" >
+                                        </td>
+                
+                                        <td>
+                                            <input type="checkbox" name="desc" >
+                                        </td>
+                
+                                        <td>
+                                            <input type="checkbox" name="desc" >
+                                        </td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td>Drawing:</td>
+                                        <td>
+                                            <input type="checkbox" name="job_num" >
+                                        </td>
+                                
+                                        <td>
+                                            <input type="checkbox" name="desc" >
+                                        </td>
+                                
+                                        <td>
+                                            <input type="checkbox" name="desc" >
+                                        </td>
+                
+                                        <td>
+                                            <input type="checkbox" name="desc" >
+                                        </td>
+                
+                                        <td>
+                                            <input type="checkbox" name="desc" >
+                                        </td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td>Painting:</td>
+                                        <td>
+                                            <input type="checkbox" name="job_num" >
+                                        </td>
+                                
+                                        <td>
+                                            <input type="checkbox" name="desc" >
+                                        </td>
+                                
+                                        <td>
+                                            <input type="checkbox" name="desc" >
+                                        </td>
+                
+                                        <td>
+                                            <input type="checkbox" name="desc" >
+                                        </td>
+                
+                                        <td>
+                                            <input type="checkbox" name="desc" >
+                                        </td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td>Musical skill:</td>
+                                        <td>
+                                            <input type="checkbox" name="job_num" >
+                                        </td>
+                                    
+                                        <td>
+                                            <input type="checkbox" name="desc" >
+                                        </td>
+                                    
+                                        <td>
+                                            <input type="checkbox" name="desc" >
+                                        </td>
+                
+                                        <td>
+                                            <input type="checkbox" name="desc" >
+                                        </td>
+                
+                                        <td>
+                                            <input type="checkbox" name="desc" >
+                                        </td>
+                                    </tr>
+                                </table>
+                          </td>
+                          
+
+                    </tr>
+
+                </table>
+            </section>
+                <section style="margin-left: 20%; margin-right: 20%;">
+                    <table>
+                        <tr>
+                            <th>Affective Domain</th>
+                        </tr>
+                        <tr>
+                            <td>
+                            <table>
+                                <tr>
+                                <tr>
+                  
+                                    <td><b></b></td>
+                                      <td>
+                                          5
+                                      </td>
+                                      
+                                      <td>
+                                          4
+                                      </td>
+                                
+                                      <td>
+                                          3
+                                     </td>
+              
+                                     <td>
+                                         2
+                                     </td>
+              
+                                     <td>
+                                         1
+                                     </td>
+                                </tr>
+                                  
+                                  <tr>
+                                      <td>Punctuality:</td>
+                                      <td>
+                                        <input type="checkbox" name="job_num" >
+                                    </td>
+                              
+                                    <td>
+                                        <input type="checkbox" name="desc" >
+                                    </td>
+                              
+                                    <td>
+                                        <input type="checkbox" name="desc" >
+                                    </td>
+              
+                                    <td>
+                                        <input type="checkbox" name="desc" >
+                                    </td>
+              
+                                    <td>
+                                        <input type="checkbox" name="desc" >
+                                    </td>
+                                  </tr>
+                                  
+                                  <tr>
+                                      <td>Neatness:</td>
+                                      <td>
+                                        <input type="checkbox" name="job_num" >
+                                    </td>
+                              
+                                    <td>
+                                        <input type="checkbox" name="desc" >
+                                    </td>
+                              
+                                    <td>
+                                        <input type="checkbox" name="desc" >
+                                    </td>
+              
+                                    <td>
+                                        <input type="checkbox" name="desc" >
+                                    </td>
+              
+                                    <td>
+                                        <input type="checkbox" name="desc" >
+                                    </td>
+                                  </tr>
+                                  
+                                  <tr>
+                                      <td>Politeness:</td>
+                                      <td>
+                                        <input type="checkbox" name="job_num" >
+                                    </td>
+                              
+                                    <td>
+                                        <input type="checkbox" name="desc" >
+                                    </td>
+                              
+                                    <td>
+                                        <input type="checkbox" name="desc" >
+                                    </td>
+              
+                                    <td>
+                                        <input type="checkbox" name="desc" >
+                                    </td>
+              
+                                    <td>
+                                        <input type="checkbox" name="desc" >
+                                    </td>
+                                  </tr>
+                                  
+                                  <tr>
+                                      <td>Honesty:</td>
+                                      <td>
+                                        <input type="checkbox" name="job_num" >
+                                    </td>
+                              
+                                    <td>
+                                        <input type="checkbox" name="desc" >
+                                    </td>
+                              
+                                    <td>
+                                        <input type="checkbox" name="desc" >
+                                    </td>
+              
+                                    <td>
+                                        <input type="checkbox" name="desc" >
+                                    </td>
+              
+                                    <td>
+                                        <input type="checkbox" name="desc" >
+                                    </td>
+                                  </tr>
+                                  
+                                  <tr>
+                                      <td>Co-operation with ohers:</td>
+                                      <td>
+                                          <input type="checkbox" name="job_num" >
+                                      </td>
+                                
+                                      <td>
+                                          <input type="checkbox" name="desc" >
+                                      </td>
+                                
+                                      <td>
+                                          <input type="checkbox" name="desc" >
+                                      </td>
+              
+                                      <td>
+                                          <input type="checkbox" name="desc" >
+                                      </td>
+              
+                                      <td>
+                                          <input type="checkbox" name="desc" >
+                                      </td>
+                                  </tr>
+                                  
+                
+                                    <tr>
+                                      
+                                        <td>Leadership:</td>
+                                        <td>
+                                          <input type="checkbox" name="job_num" >
+                                      </td>
+                                
+                                      <td>
+                                          <input type="checkbox" name="desc" >
+                                      </td>
+                                
+                                      <td>
+                                          <input type="checkbox" name="desc" >
+                                      </td>
+                
+                                      <td>
+                                          <input type="checkbox" name="desc" >
+                                      </td>
+                
+                                      <td>
+                                          <input type="checkbox" name="desc" >
+                                      </td>
+                                    </tr>
+                
+                                    <tr>
+                                        <td>Helping others:</td>
+                                        <td>
+                                          <input type="checkbox" name="job_num" >
+                                      </td>
+                                
+                                      <td>
+                                          <input type="checkbox" name="desc" >
+                                      </td>
+                                
+                                      <td>
+                                          <input type="checkbox" name="desc" >
+                                      </td>
+                
+                                      <td>
+                                          <input type="checkbox" name="desc" >
+                                      </td>
+                
+                                      <td>
+                                          <input type="checkbox" name="desc" >
+                                      </td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td>Emotional stability:</td>
+                                        <td>
+                                          <input type="checkbox" name="job_num" >
+                                      </td>
+                                
+                                      <td>
+                                          <input type="checkbox" name="desc" >
+                                      </td>
+                                
+                                      <td>
+                                          <input type="checkbox" name="desc" >
+                                      </td>
+                
+                                      <td>
+                                          <input type="checkbox" name="desc" >
+                                      </td>
+                
+                                      <td>
+                                          <input type="checkbox" name="desc" >
+                                      </td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td>Health:</td>
+                                        <td>
+                                          <input type="checkbox" name="job_num" >
+                                      </td>
+                                
+                                      <td>
+                                          <input type="checkbox" name="desc" >
+                                      </td>
+                                
+                                      <td>
+                                          <input type="checkbox" name="desc" >
+                                      </td>
+                
+                                      <td>
+                                          <input type="checkbox" name="desc" >
+                                      </td>
+                
+                                      <td>
+                                          <input type="checkbox" name="desc" >
+                                      </td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td>Attitude to work:</td>
+                                        <td>
+                                          <input type="checkbox" name="job_num" >
+                                      </td>
+                                
+                                      <td>
+                                          <input type="checkbox" name="desc" >
+                                      </td>
+                                
+                                      <td>
+                                          <input type="checkbox" name="desc" >
+                                      </td>
+                
+                                      <td>
+                                          <input type="checkbox" name="desc" >
+                                      </td>
+                
+                                      <td>
+                                          <input type="checkbox" name="desc" >
+                                      </td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td>Attentiveness:</td>
+                                        <td>
+                                          <input type="checkbox" name="job_num" >
+                                      </td>
+                                
+                                      <td>
+                                          <input type="checkbox" name="desc" >
+                                      </td>
+                                
+                                      <td>
+                                          <input type="checkbox" name="desc" >
+                                      </td>
+                
+                                      <td>
+                                          <input type="checkbox" name="desc" >
+                                      </td>
+                
+                                      <td>
+                                          <input type="checkbox" name="desc" >
+                                      </td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td>Perseverance:</td>
+                                        <td>
+                                          <input type="checkbox" name="job_num" >
+                                      </td>
+                                
+                                      <td>
+                                          <input type="checkbox" name="desc" >
+                                      </td>
+                                
+                                      <td>
+                                          <input type="checkbox" name="desc" >
+                                      </td>
+                
+                                      <td>
+                                          <input type="checkbox" name="desc" >
+                                      </td>
+                
+                                      <td>
+                                          <input type="checkbox" name="desc" >
+                                      </td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td>Speaking:</td>
+                                        <td>
+                                            <input type="checkbox" name="job_num" >
+                                        </td>
+                                  
+                                        <td>
+                                            <input type="checkbox" name="desc" >
+                                        </td>
+                                  
+                                        <td>
+                                            <input type="checkbox" name="desc" >
+                                        </td>
+                
+                                        <td>
+                                            <input type="checkbox" name="desc" >
+                                        </td>
+                
+                                        <td>
+                                            <input type="checkbox" name="desc" >
+                                        </td>
+                                    </tr>
+                                </tr>
+                            </table>
+                        
+                        </td>
+                    </tr>
+                    </table>
+                </section>
+            
+            </div>
+                  <fieldset style="margin-top: 1%; width: 95%; margin-left: 2.5%; padding-top: 1%; height: 280px; box-shadow: 2px 9px 8px 3px greenyellow">
+                    <label style="margin-left: 3%;" id="numb">No. of Subjects:</label> <input type="number" name="numb" id="nos" class="subno" oninput="calcAverage()">
+                    <!--<p id="expscore">Overall Total:</p> <input type="number" name="expscore" id="ovt" class="overall" oninput="percent()">-->
+                    <span style="margin-left: 5%;" id="total">Total:</span> <input type="number" name="total" id="paras" class="total" oninput="calcAverage()">
+                    <span style="margin-left: 5%;" id="ave">Student's Average:</span> <input type="number" name="average" id="paras" class="average" oninput="percent()" >
+                    <span style="margin-left: 5%;" id="percent">Percentage(%):</span> <input type="number" name="percent" id="per" class="parcent">
+                    <p style="margin-left: 40% ; padding-bottom: .05%; margin-bottom: .05%;">Teacher's Comment</p> <textarea style="margin-left: 27%; width: 40%;"></textarea>
+                    <p class="ogaremk" style="margin-left: 40%;"><b>Director's Remark:</b></p> <p style="margin-left: 30%; margin-bottom: .001%; margin-top: .001%;">.......................................................................................</p>
+                    <input type="submit" value="Submit" style="margin-left: 43%; background-color: chartreuse; width: 5em; height: 2em; font-size: 125%; box-shadow: 5px 3px 8px 1px greenyellow; border-radius: 15px;">
+                  </fieldset>              
+                </form>
+            
+               
+                </div>
+              </div>
+            </div>
+          </div>
+                                                                                          
+         <!-- <video id="webcam"></video>
+          <input type="button" id="vidbtn" >                                           
+             -->                                             
+          </div><!--/col-12-->
+      </div>
+    </div>
+</fieldset>
+    <footer>
+
+      <p>&copy; 2021 Harbottle School</p>
+
+    </footer>
+    <script src="script/scripts.js">
+    </script>
+  </body>
+</html>

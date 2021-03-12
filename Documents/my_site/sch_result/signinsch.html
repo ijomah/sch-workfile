@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+    <meta charset="utf-8" />
+    <body>
+        <div class="container">
+            <div class="row">
+            
+            <div class="col-md-12"> 
+                
+                <div class="panel">
+                <div class="panel-body">
+                    
+                    
+                    
+                    <!--/stories-->
+                    <div class="row">    
+                    <br>
+                    <div class="col-md-2 col-sm-3 text-center">
+                        Sign In!
+                        <form name="signInForm" action="/auth/signin" method="post">
+                        UserName: <input name="username" id="username"/><br/>
+                        Password: <input name="password" id="password"/><br/>
+                        Admin Token*: <input name="admintoken" id="admintoken"/><br/>
+                        <input type="submit" value="Sign in" />
+                        </form>
+                        <p><a href="#">Sign up!</a></p>
+                        <p><a href="#">Forgot Password?</a></p>
+                    </div>
+                    </div>
+                    <style>
+                        input, textarea {
+  /* To make sure that all text fields have the same font settings
+     By default, textareas have a monospace font */
+  font: 1em sans-serif;
+
+  /* Uniform text field size */
+  width: 300px;
+  box-sizing: border-box;
+
+  /* Match form field borders */
+  border: 1px solid #999;
+}
+input:focus, textarea:focus {
+    border-width: 3px;
+    border-bottom-color: greenyellow;
+    border-bottom-width: 3px;
+}
+form {
+  /* Center the form on the page */
+  margin: 0 auto;
+  width: 400px;
+  /* Form outline */
+  padding: 1em;
+  border: 1px solid #CCC;
+  border-radius: 1em;
+  box-shadow: 2px 2px 4px 3px greenyellow;
+}
+form li + li {
+    margin-top: 2em;
+}
+button {
+    margin-left: 10em;
+    margin-top: 1em;
+    
+}
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+input, textarea {
+    width: 300px;
+    box-sizing: border-box;
+    border: 1px solid #999;
+}
+label {
+    display: inline-block;
+    width: 60px;
+}
+                    </style>
+                    <hr>
+                    <form action="127.0.0.1:5500" method="post">
+                        <ul>
+                            <li>
+                                <label for="nm" >Name:</label>
+                                <input type="text" id="nm" name="user_name">
+                            </li>
+                            <li>
+                                <label for="email">Email:</label>
+                                <input type="email" id="email" name="user_email">
+                            </li>
+                            <li>
+                                <label for="info">Message:</label>
+                                <textarea id="info" name="user_message"></textarea>
+                            </li>
+                        </ul>
+                        <button>Send my message</button>
+                    </form>
+                    
+                </div>
+                </div>
+                                                                                                
+                                                            
+                                                                
+                </div><!--/col-12-->
+            </div>
+        </div>
+    </body>
+  </html>
